@@ -9,6 +9,7 @@ import {
 import { BLOGS, PROJECTS, PARTNERS, VIDEOS, REVIEWS } from '../constants';
 import { Link } from 'react-router-dom';
 import founderPortrait from '../assets/founder_portrait.png';
+import latentLayerLogo from '../assets/latent_layer_logo.png';
 
 const MarqueeTicker = () => {
   const items = [
@@ -174,12 +175,12 @@ const CloudIcon = (props: any) => (
 /* Redesigned Hero Section */
 const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-between pt-28 pb-0 overflow-hidden bg-grid">
+    <section className="relative min-h-[85vh] flex flex-col justify-between pt-28 pb-12 sm:pb-16 overflow-hidden bg-grid">
       {/* Background Ambient Lighting */}
       <div className="absolute top-1/4 -left-32 w-[550px] h-[550px] bg-[#FFC300]/15 rounded-full blur-[160px] animate-ethereal-1 pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-[600px] h-[600px] bg-[#FF4D23]/15 rounded-full blur-[170px] animate-ethereal-2 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full flex-grow flex flex-col justify-center py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full flex-grow flex flex-col justify-center py-8 pb-14 sm:pb-20">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Main Title Area */}
           <motion.div 
@@ -218,11 +219,11 @@ const Hero = () => {
               </Link>
 
               <a
-            href="#partners"
-            className="glass px-7 sm:px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white hover:bg-white/10 border border-white/15 transition-all duration-300 hover:scale-[1.03] mb-6"
-          >
-            Latest About Community
-          </a>
+                href="#partners"
+                className="glass px-7 sm:px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white hover:bg-white/10 border border-white/15 transition-all duration-300 hover:scale-[1.03] mb-6"
+              >
+                Latest About Community
+              </a>
             </div>
           </motion.div>
 
@@ -233,7 +234,7 @@ const Hero = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative z-10 glass-card rounded-3xl p-6 sm:p-7 border-[#FFC300]/30 shadow-2xl backdrop-blur-2xl glow-ethereal w-full"
+              className="relative z-10 glass-card rounded-3xl p-6 sm:p-7 border-[#FFC300]/30 shadow-2xl backdrop-blur-2xl glow-ethereal w-full mb-8 sm:mb-12"
             >
               <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10">
                 <div className="flex gap-2">
@@ -265,7 +266,6 @@ const Hero = () => {
                 </div>
               </div>
             </motion.div>
-            
 
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 4, 0] }}
@@ -277,9 +277,9 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 12, 0], rotate: [0, -4, 0] }}
+              animate={{ y: [0, 10, 0], rotate: [0, -3, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center justify-center gap-2 bg-[#3B82F6] text-white px-6 py-3 sm:px-7 sm:py-3.5 min-w-[230px] sm:min-w-[280px] rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
+              className="absolute -bottom-1 -right-2 sm:-bottom-2 sm:-right-4 z-20 flex items-center justify-center gap-2 bg-[#3B82F6] text-white px-6 py-3 sm:px-7 sm:py-3.5 min-w-[230px] sm:min-w-[280px] rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white flex-shrink-0" />
               <span className="whitespace-nowrap">500+ Community Members</span>
@@ -302,84 +302,126 @@ const Hero = () => {
   );
 };
 
-/* Weekly Newsletter Section */
+/* Weekly Newsletter Section: The Latent Layer */
 const WeeklyNewsletter = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
+    if (!email) return;
+    setIsSubmitting(true);
+    setTimeout(() => {
       setSubscribed(true);
-      setEmail('');
-    }
+      setIsSubmitting(false);
+    }, 600);
   };
 
   return (
     <section id="newsletter" className="py-20 sm:py-28 relative border-t border-white/10 bg-[#050507]">
+      {/* Hidden iframe for non-refreshing Beehiiv form submission */}
+      <iframe name="beehiiv_hidden_frame" id="beehiiv_hidden_frame" className="hidden" aria-hidden="true" title="Beehiiv Submit Frame" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card border border-white/15 rounded-[36px] p-8 sm:p-14 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFC300]/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="glass-card border border-[#FFC300]/25 rounded-[36px] p-8 sm:p-14 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
+          {/* Ambient Lighting Glow Orbs */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFC300]/15 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF4D23]/10 rounded-full blur-[160px] pointer-events-none" />
 
           <div className="grid lg:grid-cols-12 gap-10 items-center relative z-10">
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/30 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider">
-                <Bell className="w-3.5 h-3.5" />
-                <span>WEEKLY SYSTEM DISPATCH</span>
+            {/* Left Content Column with Official Logo */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/40 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(255,195,0,0.2)]">
+                  <span className="w-2 h-2 rounded-full bg-[#FFC300] animate-ping" />
+                  <Bell className="w-3.5 h-3.5" />
+                  <span>THE LATENT LAYER NEWSLETTER</span>
+                </div>
+                <a
+                  href="https://rootsprout.beehiiv.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
+                >
+                  <span>rootsprout.beehiiv.com</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight whitespace-normal break-normal">
-                Master Systems Internals <br />
-                <span className="text-gradient-gold">Delivered Every Week</span>
-              </h2>
-              <p className="text-sm sm:text-base text-white/60 max-w-xl leading-relaxed">
-                Join 1,000+ developers getting our weekly breakdowns on operating systems, databases, distributed logs, and compiler design. Zero spam, unsubscribe anytime.
+
+              {/* Logo & Headline Row */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
+
+                <div>
+                  <h2 className="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight leading-tight whitespace-normal break-normal">
+                    The Latent Layer <br />
+                    <span className="text-gradient-gold">News Letter</span>
+                  </h2>
+                </div>
+              </div>
+
+              <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
+                Subscribe to <strong className="text-[#FFC300] font-bold">The Latent Layer</strong> newsletter. Join with the developers getting our weekly Tech News and deep-dives on AI, System architecture and Design.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-2 text-xs font-mono text-white/70">
-                <div className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-[#FFC300]" /> First-Principles Systems Breakdown
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-[#FFC300]" /> Annotated C & Rust Code Snippets
-                </div>
-              </div>
+
             </div>
 
+            {/* Right Interactive Subscription Form Column */}
             <div className="lg:col-span-5">
-              <div className="glass p-6 sm:p-8 rounded-3xl border-white/15 bg-white/[0.02]">
+              <div className="glass p-6 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
+
                 {subscribed ? (
-                  <div className="text-center py-6 space-y-3">
-                    <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-8 h-8" />
+                  <div className="text-center py-8 space-y-4">
+                    <div className="w-16 h-16 bg-[#FFC300]/20 text-[#FFC300] border border-[#FFC300]/40 rounded-full flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(255,195,0,0.3)] animate-bounce">
+                      <CheckCircle2 className="w-9 h-9" />
                     </div>
-                    <h3 className="text-xl font-bold font-display text-white">You're on the Dispatch list!</h3>
-                    <p className="text-xs text-white/60">Check your inbox every Tuesday for new system breakdowns.</p>
+                    <h3 className="text-2xl font-extrabold font-display text-white">Welcome to The Latent Layer!</h3>
+                    <p className="text-xs font-mono text-white/70 leading-relaxed">
+                      You are officially on the subscriber list. Check your inbox to confirm your subscription!
+                    </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label className="text-xs font-mono text-white/60 mb-2 block font-bold uppercase">Work or Personal Email</label>
-                      <div className="relative">
-                        <Mail className="w-4 h-4 text-white/40 absolute left-4 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="email"
-                          required
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="developer@company.com"
-                          className="w-full bg-white/5 border border-white/15 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#FFC300] transition-colors"
-                        />
+                  <form 
+                    action="https://subscribe-forms.beehiiv.com/api/submit" 
+                    method="POST" 
+                    target="beehiiv_hidden_frame"
+                    onSubmit={handleSubmit}
+                    className="space-y-5 relative z-10"
+                  >
+                    <input type="hidden" name="form_id" value="dfb1244e-40e4-4dd4-a053-5087b72d5233" />
+                    
+                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center gap-2">
+                        <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40" />
+                        <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider">
+                          The Latent Layer
+                        </span>
                       </div>
+                      <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                        Weekly Edition
+                      </span>
                     </div>
+
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] transition-transform cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10"
                     >
-                      <span>Subscribe to Dispatch</span>
-                      <Send className="w-4 h-4" />
+                      <span>{isSubmitting ? 'Subscribing...' : 'Subscribe to The Latent Layer'}</span>
+                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
-                    <div className="text-[10px] font-mono text-center text-white/40">100% free • No spam • Unsubscribe anytime</div>
+
+                    <div className="pt-1 text-[11px] font-mono text-center text-white/40 flex flex-col items-center gap-1.5">
+                      <div className="flex items-center gap-2">
+                        <span>🔥  Available Weekly</span>
+                        <span>•</span>
+                        <span>100% Free</span>
+                        <span>•</span>
+                        <span>Unsubscribe anytime</span>
+                      </div>
+                    </div>
                   </form>
                 )}
               </div>
