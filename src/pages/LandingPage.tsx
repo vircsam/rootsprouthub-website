@@ -51,7 +51,7 @@ const FounderSection = () => {
         {/* Prominent Section Header Above Card */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white whitespace-normal break-normal">
-            About the <span className="text-gradient-gold">Founder</span>
+            About the <span className="text-gradient-gold"> Founder</span>
           </h2>
         </div>
 
@@ -100,7 +100,7 @@ const FounderSection = () => {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/30 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider mb-2">
                   <Award className="w-3.5 h-3.5" />
-                  <span>FOUNDER CREDENTIALS</span>
+                  <span>FOUNDER & MAINTAINER</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-extrabold font-display text-white">
                   Meerthika SR
@@ -218,11 +218,11 @@ const Hero = () => {
               </Link>
 
               <a
-                href="#partners"
-                className="glass px-7 sm:px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white hover:bg-white/10 border border-white/15 transition-all duration-300 hover:scale-[1.03]"
-              >
-                Latest About Community
-              </a>
+            href="#partners"
+            className="glass px-7 sm:px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white hover:bg-white/10 border border-white/15 transition-all duration-300 hover:scale-[1.03] mb-6"
+          >
+            Latest About Community
+          </a>
             </div>
           </motion.div>
 
@@ -265,12 +265,12 @@ const Hero = () => {
                 </div>
               </div>
             </motion.div>
+            
 
-            {/* Levitating Graphic Badges - ENHANCED MOBILE WIDTH */}
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 4, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-5 -left-3 sm:-top-6 sm:-left-6 z-20 flex items-center justify-center gap-2 bg-[#FF4D23] text-white px-4 py-2.5 sm:px-5 sm:py-3 min-w-[155px] sm:min-w-fit rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
+              className="absolute -top-5 -left-3 sm:-top-6 sm:-left-6 z-20 flex items-center justify-center gap-2 bg-[#FF4D23] text-white px-6 py-3 sm:px-7 sm:py-3.5 min-w-[180px] sm:min-w-[230px] rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping flex-shrink-0" />
               <span className="whitespace-nowrap">100+ GitHub Stars</span>
@@ -279,10 +279,10 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 12, 0], rotate: [0, -4, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center justify-center gap-2 bg-[#3B82F6] text-white px-4 py-2.5 sm:px-5 sm:py-3 min-w-[195px] sm:min-w-fit rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
+              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center justify-center gap-2 bg-[#3B82F6] text-white px-6 py-3 sm:px-7 sm:py-3.5 min-w-[230px] sm:min-w-[280px] rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white flex-shrink-0" />
-              <span className="whitespace-nowrap">500+ Ecosystem Builders</span>
+              <span className="whitespace-nowrap">500+ Community Members</span>
             </motion.div>
 
             <motion.div
@@ -290,7 +290,7 @@ const Hero = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
               className="absolute top-1/2 -right-4 sm:-right-10 z-20 flex bg-[#FFC300] text-black px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,195,0,0.4)] border border-black/10 font-mono font-bold text-[10px] sm:text-xs"
             >
-              ⚡ 29+ Projects Built
+              ⚡ 20+ Projects Built
             </motion.div>
           </div>
         </div>
@@ -514,7 +514,7 @@ const LandingPage = () => {
                   <Star key={i} className="w-3.5 h-3.5 fill-[#FFC300]" />
                 ))}
               </div>
-              <span>5.0 Average Rating from 400+ Engineers</span>
+              <span>5.0 Average Rating from Engineers</span>
             </div>
           </div>
 
@@ -583,12 +583,12 @@ const LandingPage = () => {
           <div className="flex justify-start sm:justify-center items-center py-6 overflow-x-auto no-scrollbar">
             <div className="flex -space-x-4 sm:-space-x-8 min-w-max px-4">
               {[
-                { label: "KERNEL LAB", sub: "OS Internals" },
+                { label: "KERNEL", sub: "OS Internals" },
                 { label: "NET STACK", sub: "TCP/IP & HTTP3" },
                 { label: "DB ENGINE", sub: "ACID & Storage" },
                 { label: "COMPILER", sub: "AST & Bytecode" },
                 { label: "DEVOPS", sub: "Containers & K8s" },
-                { label: "SECURITY", sub: "Low-level Crypto" },
+                { label: "AI", sub: "Math & Agents" },
               ].map((circle, idx) => (
                 <motion.div
                   key={idx}
@@ -714,7 +714,7 @@ const LandingPage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
             <div>
               <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight whitespace-normal break-normal">
-                Video <span className="text-gradient-gold">Sessions</span>
+                Breakdown <span className="text-gradient-gold">Videos</span>
               </h2>
               <p className="text-white/60 text-sm sm:text-base mt-2 max-w-lg">
                 Short sessions focused on building real systems from scratch.
