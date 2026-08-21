@@ -303,20 +303,45 @@ const Hero = () => {
   );
 };
 
+/* Beehiiv Official Form Loader Component */
+const BeehiivScriptForm = () => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.innerHTML = '';
+      const script = document.createElement('script');
+      script.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
+      script.async = true;
+      script.setAttribute('data-beehiiv-form', 'dfb1244e-40e4-4dd4-a053-5087b72d5233');
+      containerRef.current.appendChild(script);
+    }
+  }, []);
+
+  return (
+    <div className="w-full flex justify-center items-center">
+      <div
+        ref={containerRef}
+        className="w-full max-w-[480px] min-h-[320px] mx-auto rounded-2xl overflow-hidden bg-black shadow-2xl flex items-center justify-center relative z-10"
+      />
+    </div>
+  );
+};
+
 /* Weekly Newsletter Section: The Latent Layer */
 const WeeklyNewsletter = () => {
   return (
-    <section id="newsletter" className="py-20 sm:py-28 relative border-t border-white/10 bg-[#050507]">
+    <section id="newsletter" className="py-14 sm:py-24 relative border-t border-white/10 bg-[#050507]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card border border-[#FFC300]/25 rounded-[36px] p-8 sm:p-14 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
+        <div className="glass-card border border-[#FFC300]/25 rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 md:p-12 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
           {/* Ambient Lighting Glow Orbs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFC300]/15 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF4D23]/10 rounded-full blur-[160px] pointer-events-none" />
 
-          <div className="grid lg:grid-cols-12 gap-10 items-center relative z-10">
-            {/* Left Content Column with Official Logo */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="flex flex-wrap items-center gap-3">
+          <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/40 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(255,195,0,0.2)]">
                   <span className="w-2 h-2 rounded-full bg-[#FFC300] animate-ping" />
                   <Bell className="w-3.5 h-3.5" />
@@ -334,56 +359,25 @@ const WeeklyNewsletter = () => {
               </div>
 
               {/* Logo & Headline Row */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1">
                 <div>
                   <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight break-words">
-                    The Latent Layer <br />
+                    The Latent Layer <br className="hidden sm:inline" />
                     <span className="text-gradient-gold">Newsletter</span>
                   </h2>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
-                Subscribe to <strong className="text-[#FFC300] font-bold">The Latent Layer</strong> newsletter. Join with the developers getting our weekly Tech News and deep-dives on AI, System architecture and Design.
+              <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Subscribe to <strong className="text-[#FFC300] font-bold">The Latent Layer</strong> newsletter on Beehiiv. Join developers getting our weekly Tech News and deep-dives on AI, System architecture, and Design.
               </p>
             </div>
 
-            {/* Right Interactive Subscription Card Column */}
-            <div className="lg:col-span-5">
-              <div className="glass p-5 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
+            {/* Right Interactive Subscription Card Column (Official Beehiiv Script Embed) */}
+            <div className="lg:col-span-5 w-full flex justify-center">
+              <div className="glass p-2 sm:p-4 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl w-full max-w-[500px]">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
-
-                <div className="space-y-5 relative z-10">
-                  <div className="flex flex-wrap sm:flex-nowrap items-center justify-between border-b border-white/10 pb-3 gap-2">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40 flex-shrink-0" />
-                      <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider truncate">
-                        The Latent Layer
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10 flex-shrink-0">
-                      Weekly Edition
-                    </span>
-                  </div>
-
-                  <a
-                    href="https://rootsprout.beehiiv.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full py-4 px-3 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10 text-center leading-snug"
-                  >
-                    <span className="truncate">Subscribe to The Latent Layer</span>
-                    <ExternalLink className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-
-                  <div className="pt-1 text-[10px] sm:text-[11px] font-mono text-center text-white/40 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-                    <span>🔥 Available Weekly</span>
-                    <span>•</span>
-                    <span>100% Free</span>
-                    <span>•</span>
-                    <span>Unsubscribe anytime</span>
-                  </div>
-                </div>
+                <BeehiivScriptForm />
               </div>
             </div>
           </div>
