@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
-  ArrowRight, Star, Users, Zap, Github, Code2, Calendar, Trophy, 
+  ArrowRight, Star, Users, Zap, Github, Code2, 
   Shield, Globe, ChevronRight, ShoppingCart, Linkedin, Youtube, 
   Instagram, Play, Clock, Sparkles, Terminal, ArrowUpRight, CheckCircle2,
   Quote, Check, Mail, Send, Bell
 } from 'lucide-react';
-import { BLOGS, PROJECTS, EVENTS, PARTNERS, BOOKS, VIDEOS, REVIEWS } from '../constants';
+import { BLOGS, PROJECTS, PARTNERS, VIDEOS, REVIEWS } from '../constants';
 import { Link } from 'react-router-dom';
 
 const MarqueeTicker = () => {
@@ -36,24 +36,24 @@ const MarqueeTicker = () => {
   );
 };
 
-/* Redesigned Hero Section Inspired by Tigranz & Untold */
+/* Redesigned Hero Section with Unified font-display */
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-between pt-28 pb-0 overflow-hidden bg-grid">
-      {/* Background Lighting Orbs */}
+      {/* Background Ambient Lighting */}
       <div className="absolute top-1/4 -left-32 w-[550px] h-[550px] bg-[#FFC300]/15 rounded-full blur-[160px] animate-ethereal-1 pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-[600px] h-[600px] bg-[#FF4D23]/15 rounded-full blur-[170px] animate-ethereal-2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full flex-grow flex flex-col justify-center py-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Main Title Area with Tigranz-inspired Floating 3D Graphic Elements */}
+          {/* Main Title Area */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="lg:col-span-7 space-y-6 sm:space-y-8"
           >
-            {/* Title Badge */}
+            {/* Ecosystem Tag */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-[#FFC300]/30 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#FFC300] animate-ping flex-shrink-0" />
               <span className="text-xs font-mono tracking-widest text-[#FFC300] uppercase font-bold">
@@ -61,8 +61,8 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* Giant Display Title - Clean Non-Splitting Wrapping */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[0.98] text-white whitespace-normal break-normal">
+            {/* Display Title - Using font-display uniformly */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[0.96] text-white whitespace-normal break-normal">
               Build. Break. <br />
               Rebuild. <br />
               <span className="text-gradient-ethereal">Learn.</span>
@@ -91,9 +91,9 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Interactive Tigranz / Untold 3D Floating Elements Container */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex items-center justify-center min-h-[380px] sm:min-h-[440px]">
-            {/* Main Center Holographic Code Terminal Box */}
+          {/* Interactive Floating Elements Container */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex items-center justify-center min-h-[360px] sm:min-h-[440px]">
+            {/* Terminal Card */}
             <motion.div 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -131,7 +131,7 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Tigranz-Style Floating 3D Graphic Badges floating over the Terminal */}
+            {/* Levitating Graphic Badges */}
             <motion.div
               animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -161,13 +161,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Ticker Ribbon */}
+      {/* Marquee Ticker */}
       <MarqueeTicker />
     </section>
   );
 };
 
-/* NEW SECTION: Weekly Newsletter Section */
+/* Weekly Newsletter Section */
 const WeeklyNewsletter = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -271,7 +271,7 @@ const LandingPage = () => {
       {/* 2. WEEKLY NEWSLETTER SECTION */}
       <WeeklyNewsletter />
 
-      {/* 3. SECTION 5: FEATURED PROJECTS */}
+      {/* 3. FEATURED PROJECTS */}
       <section id="projects" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -360,7 +360,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 4. SECTION 10: COMMUNITY REVIEWS & TESTIMONIALS */}
+      {/* 4. COMMUNITY REVIEWS & TESTIMONIALS */}
       <section id="reviews" className="py-20 sm:py-28 relative border-t border-white/5 bg-[#050507]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -430,7 +430,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 5. SECTION 7: COMMUNITY ECOSYSTEM & PARTNERSHIPS */}
+      {/* 5. COMMUNITY ECOSYSTEM & PARTNERSHIPS */}
       <section id="partners" className="py-20 sm:py-28 border-t border-white/5 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
@@ -480,7 +480,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 6. SECTION 3: LATEST INSIGHTS (BLOGS) */}
+      {/* 6. LATEST INSIGHTS (BLOGS) */}
       <section id="blogs" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
@@ -556,7 +556,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 7. SECTION 4: VIDEO SESSIONS */}
+      {/* 7. VIDEO SESSIONS */}
       <section id="videos" className="py-20 sm:py-28 relative border-t border-white/5 bg-[#050507]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
@@ -625,216 +625,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 8. SECTION 6: UPCOMING EVENTS */}
-      <section id="events" className="py-20 sm:py-28 relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              <div>
-                <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight mb-4 whitespace-normal break-normal">
-                  Upcoming <span className="text-gradient-gold">Events</span>
-                </h2>
-                <p className="text-white/60 text-sm sm:text-base max-w-lg">
-                  Join global virtual hackathons, live code reviews, and system architecture workshops.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {EVENTS.slice(0, 4).map((event) => (
-                  <div 
-                    key={event.id} 
-                    className="glass-card p-4 sm:p-5 rounded-2xl border-white/10 hover:border-[#FFC300]/40 transition-all duration-300 flex items-center gap-4 sm:gap-5 group cursor-pointer"
-                  >
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FFC300] group-hover:bg-[#FFC300] group-hover:text-black transition-all flex-shrink-0">
-                      <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-[10px] font-mono text-[#FFC300] uppercase tracking-widest font-bold mb-1">
-                        {event.type}
-                      </div>
-                      <h3 className="text-base sm:text-lg font-bold font-display text-white group-hover:text-[#FFC300] transition-colors truncate">
-                        {event.title}
-                      </h3>
-                      <div className="text-xs font-mono text-white/50 mt-0.5 truncate">
-                        {event.date} • {event.location}
-                      </div>
-                    </div>
-                    <ArrowUpRight className="w-5 h-5 text-white/30 group-hover:text-[#FFC300] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all flex-shrink-0" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-              <div className="aspect-[4/5] glass-card rounded-3xl overflow-hidden p-3 relative border-white/15 shadow-2xl">
-                <img 
-                  src={EVENTS[0]?.image} 
-                  alt="Event Banner" 
-                  className="w-full h-full object-cover rounded-2xl opacity-60" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent opacity-90" />
-                <div className="absolute bottom-6 left-6 right-6 z-10">
-                  <div className="glass p-5 rounded-2xl border-white/15 backdrop-blur-xl">
-                    <span className="px-2.5 py-1 bg-[#FFC300] text-black text-[10px] font-mono font-bold rounded-md uppercase tracking-wider mb-2 inline-block">
-                      SPOTLIGHT EVENT
-                    </span>
-                    <h4 className="text-lg sm:text-xl font-bold font-display text-[#FFFFFF] mb-1 leading-snug">{EVENTS[0]?.title}</h4>
-                    <p className="text-xs font-mono text-white/60">{EVENTS[0]?.date}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. SECTION 2: ROOTSPROUTHUB ORIGINALS (BOOKS) */}
-      <section id="books" className="py-20 sm:py-28 relative overflow-hidden border-t border-white/5 bg-[#050507]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
-            <div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight whitespace-normal break-normal">
-                Rootsprouthub <span className="text-gradient-gold">Originals</span>
-              </h2>
-              <p className="text-white/60 text-sm sm:text-base mt-2 max-w-lg">
-                Exclusive books, guides, and architectural blueprints written by community maintainers.
-              </p>
-            </div>
-            <Link 
-              to="/books" 
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#FFC300] hover:text-white transition-colors group"
-            >
-              <span>Explore All Originals</span> 
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {BOOKS.slice(0, 3).map((book) => (
-              <motion.div 
-                key={book.id}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
-                className="group glass-card rounded-3xl overflow-hidden glass-card-hover flex flex-col justify-between"
-              >
-                <div>
-                  <div className="aspect-[3/4] overflow-hidden relative bg-[#0D0E14]">
-                    <img 
-                      src={book.coverImage} 
-                      alt={book.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                      referrerPolicy="no-referrer" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent opacity-70" />
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center z-10">
-                      <div className="flex items-center gap-1.5 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-[#FFC300] border border-white/10">
-                        <Star className="w-3.5 h-3.5 fill-[#FFC300]" /> {book.rating}
-                      </div>
-                      <div className="text-white font-bold bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full text-xs border border-white/10">
-                        {book.price}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold font-display mb-2 text-white group-hover:text-[#FFC300] transition-colors line-clamp-1">
-                      {book.title}
-                    </h3>
-                    <p className="text-xs font-mono text-white/50 mb-6">Author: {book.author}</p>
-                  </div>
-                </div>
-
-                <div className="p-6 pt-0">
-                  <a
-                    href={book.buyLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full py-3.5 rounded-xl bg-white/5 border border-white/10 font-bold text-xs uppercase tracking-wider hover:bg-[#FFC300] hover:text-black hover:border-[#FFC300] transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg"
-                  >
-                    <ShoppingCart className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-                    <span>Get Digital Copy</span>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. COMMUNITY REVOLUTION CTA & SPONSORSHIP */}
-      <section id="community" className="py-20 sm:py-28 relative border-t border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="glass-card rounded-[32px] sm:rounded-[40px] p-6 sm:p-12 md:p-16 border-white/15 relative overflow-hidden shadow-2xl bg-gradient-to-br from-[#0E0E14] to-[#070709]">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-              <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] whitespace-normal break-normal">
-                  Join the <span className="text-gradient-gold">Rootsprouthub</span> <br className="hidden sm:block" />
-                  Revolution.
-                </h2>
-                <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-xl leading-relaxed">
-                  Whether you're an experienced maintainer or just beginning to explore system engineering, build real-world software together with us.
-                </p>
-
-                <div className="flex flex-wrap gap-3 sm:gap-4 pt-2">
-                  <a
-                    href="https://github.com/RootSprout"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full flex items-center gap-3 text-xs uppercase tracking-wider glow-gold hover:glow-gold-strong hover:scale-[1.03] transition-all duration-300 shadow-2xl"
-                  >
-                    <span>Join GitHub Repo</span>
-                    <Github className="w-4 h-4" />
-                  </a>
-                  <Link 
-                    to="/projects"
-                    className="glass px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs uppercase tracking-wider text-white hover:bg-white/10 border border-white/15 transition-all duration-300"
-                  >
-                    Contribute Now
-                  </Link>
-                </div>
-
-                <div className="pt-2 flex flex-wrap gap-4 sm:gap-6 text-xs font-mono text-white/60">
-                  <a href="https://github.com/RootSprout" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#FFC300] transition-colors">
-                    <Github className="w-4 h-4 text-[#FFC300]" /> GitHub
-                  </a>
-                  <a href="https://www.linkedin.com/company/root-sprout" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#FFC300] transition-colors">
-                    <Linkedin className="w-4 h-4 text-[#FFC300]" /> LinkedIn
-                  </a>
-                  <a href="https://www.youtube.com/@meerthika" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#FFC300] transition-colors">
-                    <Youtube className="w-4 h-4 text-[#FFC300]" /> YouTube
-                  </a>
-                  <a href="https://www.instagram.com/rootsprouthub/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#FFC300] transition-colors">
-                    <Instagram className="w-4 h-4 text-[#FFC300]" /> Instagram
-                  </a>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 hidden lg:block space-y-6">
-                <div className="glass p-7 rounded-3xl border-white/10 space-y-3">
-                  <div className="w-11 h-11 bg-[#FFC300]/10 rounded-2xl flex items-center justify-center text-[#FFC300]">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <div className="text-xl font-bold font-display text-white">Open Source First</div>
-                  <div className="text-xs text-white/60 leading-relaxed">
-                    Build completely in public, share codebase architecture, and learn through peer review.
-                  </div>
-                </div>
-
-                <div className="glass p-7 rounded-3xl border-white/10 space-y-3">
-                  <div className="w-11 h-11 bg-[#FFC300]/10 rounded-2xl flex items-center justify-center text-[#FFC300]">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <div className="text-xl font-bold font-display text-white">Build From Scratch</div>
-                  <div className="text-xs text-white/60 leading-relaxed">
-                    Master software internals by implementing virtual memory, binary protocols, and storage algorithms.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SPONSORSHIP */}
+      {/* 8. SPONSORSHIP SECTION */}
       <section id="sponsorship" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="glass-card border border-white/15 rounded-3xl p-6 sm:p-10 md:p-14 grid md:grid-cols-12 gap-8 items-center bg-[#0A0B10]">
