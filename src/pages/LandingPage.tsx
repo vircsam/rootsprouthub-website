@@ -304,24 +304,8 @@ const Hero = () => {
 
 /* Weekly Newsletter Section: The Latent Layer */
 const WeeklyNewsletter = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    if (!email) return;
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setSubscribed(true);
-      setIsSubmitting(false);
-    }, 600);
-  };
-
   return (
     <section id="newsletter" className="py-20 sm:py-28 relative border-t border-white/10 bg-[#050507]">
-      {/* Hidden iframe for non-refreshing Beehiiv form submission */}
-      <iframe name="beehiiv_hidden_frame" id="beehiiv_hidden_frame" className="hidden" aria-hidden="true" title="Beehiiv Submit Frame" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="glass-card border border-[#FFC300]/25 rounded-[36px] p-8 sm:p-14 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
           {/* Ambient Lighting Glow Orbs */}
@@ -338,7 +322,7 @@ const WeeklyNewsletter = () => {
                   <span>THE LATENT LAYER NEWSLETTER</span>
                 </div>
                 <a
-                  href="https://rootsprout.beehiiv.com"
+                  href="https://rootsprout.beehiiv.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
@@ -350,11 +334,10 @@ const WeeklyNewsletter = () => {
 
               {/* Logo & Headline Row */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
-
                 <div>
                   <h2 className="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight leading-tight whitespace-normal break-normal">
                     The Latent Layer <br />
-                    <span className="text-gradient-gold">News Letter</span>
+                    <span className="text-gradient-gold">Newsletter</span>
                   </h2>
                 </div>
               </div>
@@ -362,68 +345,46 @@ const WeeklyNewsletter = () => {
               <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
                 Subscribe to <strong className="text-[#FFC300] font-bold">The Latent Layer</strong> newsletter. Join with the developers getting our weekly Tech News and deep-dives on AI, System architecture and Design.
               </p>
-
-
             </div>
 
-            {/* Right Interactive Subscription Form Column */}
+            {/* Right Interactive Subscription Card Column */}
             <div className="lg:col-span-5">
               <div className="glass p-6 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
 
-                {subscribed ? (
-                  <div className="text-center py-8 space-y-4">
-                    <div className="w-16 h-16 bg-[#FFC300]/20 text-[#FFC300] border border-[#FFC300]/40 rounded-full flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(255,195,0,0.3)] animate-bounce">
-                      <CheckCircle2 className="w-9 h-9" />
-                    </div>
-                    <h3 className="text-2xl font-extrabold font-display text-white">Welcome to The Latent Layer!</h3>
-                    <p className="text-xs font-mono text-white/70 leading-relaxed">
-                      You are officially on the subscriber list. Check your inbox to confirm your subscription!
-                    </p>
-                  </div>
-                ) : (
-                  <form 
-                    action="https://subscribe-forms.beehiiv.com/api/submit" 
-                    method="POST" 
-                    target="beehiiv_hidden_frame"
-                    onSubmit={handleSubmit}
-                    className="space-y-5 relative z-10"
-                  >
-                    <input type="hidden" name="form_id" value="dfb1244e-40e4-4dd4-a053-5087b72d5233" />
-                    
-                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                      <div className="flex items-center gap-2">
-                        <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40" />
-                        <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider">
-                          The Latent Layer
-                        </span>
-                      </div>
-                      <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
-                        Weekly Edition
+                <div className="space-y-5 relative z-10">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div className="flex items-center gap-2">
+                      <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40" />
+                      <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider">
+                        The Latent Layer
                       </span>
                     </div>
+                    <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                      Weekly Edition
+                    </span>
+                  </div>
 
+                  <a
+                    href="https://rootsprout.beehiiv.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10"
+                  >
+                    <span>Subscribe to The Latent Layer</span>
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
 
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10"
-                    >
-                      <span>{isSubmitting ? 'Subscribing...' : 'Subscribe to The Latent Layer'}</span>
-                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
-                    </button>
-
-                    <div className="pt-1 text-[11px] font-mono text-center text-white/40 flex flex-col items-center gap-1.5">
-                      <div className="flex items-center gap-2">
-                        <span>🔥  Available Weekly</span>
-                        <span>•</span>
-                        <span>100% Free</span>
-                        <span>•</span>
-                        <span>Unsubscribe anytime</span>
-                      </div>
+                  <div className="pt-1 text-[11px] font-mono text-center text-white/40 flex flex-col items-center gap-1.5">
+                    <div className="flex items-center gap-2">
+                      <span>🔥  Available Weekly</span>
+                      <span>•</span>
+                      <span>100% Free</span>
+                      <span>•</span>
+                      <span>Unsubscribe anytime</span>
                     </div>
-                  </form>
-                )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
