@@ -91,3 +91,16 @@ export interface User {
   level: number;
   badges: string[];
 }
+
+export interface Review {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  avatar: string;
+  rating: number;
+  review: string;
+  projectOrTopic: string;
+  verified: boolean;
+}
+

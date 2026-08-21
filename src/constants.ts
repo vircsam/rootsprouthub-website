@@ -440,3 +440,51 @@ export const VIDEOS: Video[] = [
     image: video9
   }
 ];
+
+export const REVIEWS = [
+  {
+    id: '1',
+    name: 'Arjun Mehta',
+    role: 'Systems Architect',
+    company: 'TechCorp / Ex-Google',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    rating: 5,
+    review: 'Building Kira-Kafka from scratch opened my eyes to zero-copy reads and memory-mapped I/O. Rootsprouthub is hands down the best place to understand production system internals!',
+    projectOrTopic: 'Kira-Kafka Project',
+    verified: true
+  },
+  {
+    id: '2',
+    name: 'Sophia Chen',
+    role: 'Infrastructure Engineer',
+    company: 'CloudNative Labs',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',
+    rating: 5,
+    review: 'The NGINX internals book and transport protocol breakdowns are masterclasses in first-principles engineering. Essential reading for every serious developer.',
+    projectOrTopic: 'Inside NGINX Book',
+    verified: true
+  },
+  {
+    id: '3',
+    name: 'David K. Miller',
+    role: 'CS Researcher & Fellow',
+    company: 'Stanford University',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    rating: 5,
+    review: 'Rootsprouthub bridges the gap between high-level frameworks and actual kernel-level execution. The hands-on C projects like AutoNormDB are phenomenal!',
+    projectOrTopic: 'AutoNormDB Engine',
+    verified: true
+  },
+  {
+    id: '4',
+    name: 'Ananya Sharma',
+    role: 'Core Contributor',
+    company: 'FOSS United',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
+    rating: 5,
+    review: 'The community hackathons and live workshops gave me the confidence to write custom Unix shells and understand OS process scheduling under the hood.',
+    projectOrTopic: 'Exsh Shell Project',
+    verified: true
+  }
+];
+

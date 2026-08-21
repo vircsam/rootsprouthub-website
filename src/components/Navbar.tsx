@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import rootsproutLogo from '../assets/rootsprout-logo.svg';
 
 const Navbar = () => {
@@ -27,29 +27,29 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass py-3 border-b border-white/10 shadow-2xl backdrop-blur-xl bg-[#070709]/80' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3.5 group cursor-pointer">
-          <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#0A0B10] border border-[#FFC300]/40 glow-gold group-hover:border-[#FFC300] group-hover:scale-105 transition-all duration-300 flex items-center justify-center p-1.5">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 max-w-full ${isScrolled ? 'glass py-3 border-b border-white/10 shadow-2xl backdrop-blur-xl bg-[#070709]/90' : 'bg-transparent py-5 sm:py-6'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer max-w-[70%] sm:max-w-none">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-[#0A0B10] border border-[#FFC300]/40 glow-gold group-hover:border-[#FFC300] transition-all duration-300 flex items-center justify-center p-1.5 flex-shrink-0">
             <img src={rootsproutLogo} alt="Rootsprouthub logo" className="w-full h-full object-contain" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-bold font-display tracking-tight text-white group-hover:text-[#FFC300] transition-colors">
+          <div className="flex flex-col min-w-0">
+            <span className="text-base sm:text-lg font-bold font-display tracking-tight text-white group-hover:text-[#FFC300] transition-colors truncate">
               Rootsprouthub
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 -mt-1">Ecosystem</span>
+            <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/40 -mt-1 truncate">Ecosystem</span>
           </div>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+        <div className="hidden lg:flex items-center gap-1 bg-white/[0.03] p-1.5 rounded-full border border-white/10 backdrop-blur-md">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
             return (
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
+                className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   isActive 
                     ? 'text-black font-bold bg-[#FFC300] shadow-[0_0_15px_rgba(255,195,0,0.4)]' 
                     : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
 
         {/* Action button */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/projects"
             className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,195,0,0.5)] hover:scale-[1.03]"
@@ -72,9 +72,9 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile menu toggle */}
         <button 
-          className="md:hidden w-10 h-10 rounded-xl glass border-white/10 flex items-center justify-center text-white hover:text-[#FFC300] transition-colors"
+          className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass border-white/10 flex items-center justify-center text-white hover:text-[#FFC300] transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Navigation Menu"
         >
@@ -82,7 +82,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Overlay Menu Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
@@ -90,9 +90,9 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-[#0A0B10]/95 backdrop-blur-2xl border-b border-white/10 p-6 md:hidden shadow-2xl"
+            className="absolute top-full left-0 right-0 bg-[#070709]/98 backdrop-blur-2xl border-b border-white/10 p-5 lg:hidden shadow-2xl max-h-[85vh] overflow-y-auto"
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
