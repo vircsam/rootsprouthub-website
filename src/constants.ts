@@ -45,8 +45,37 @@ import video6 from './assets/videos/6.png';
 import video7 from './assets/videos/7.png';
 import video8 from './assets/videos/8.png';
 import video9 from './assets/videos/9.png';
+import kernelSeriesCover from './assets/blogs/kernel_series_cover.jpg';
 
 export const BLOGS: Blog[] = [
+  {
+    id: 'k1.2',
+    title: '🐧 Kernel Series Part 1.2: Hard Links, Symbolic Links & How Linux Stores Filesystems',
+    author: 'Meerthika SR',
+    tags: ['Linux', 'Kernel', 'Filesystem'],
+    readTime: '12 min',
+    date: '1w ago',
+    image: kernelSeriesCover,
+    excerpt: 'In Linux, a filename is not the file itself. Explore hard links, symbolic links, inodes, blocks, metadata, ext4, XFS, Btrfs, ZFS, FAT32, journaling, copy-on-write, and file deletion mechanics.',
+    link: 'https://medium.com/@meerthika/kernel-series-part-1-2-hard-links-symbolic-links-how-linux-stores-filesystems-68b35e043395?sharedUserId=meerthika',
+    isSeries: true,
+    seriesTitle: 'Kernel Series',
+    part: 'Part 1.2'
+  },
+  {
+    id: 'k1.1',
+    title: '🐧 Kernel Series Part 1.1: Understanding Linux Filesystems — Files, Inodes & Directory Internals',
+    author: 'Meerthika SR',
+    tags: ['Linux', 'Kernel', 'OS Internals'],
+    readTime: '10 min',
+    date: '3w ago',
+    image: kernelSeriesCover,
+    excerpt: 'We often think of a file as just a name containing data, but Linux sees it differently. Learn how filenames map to directory entries, inode tables, metadata, and physical data blocks.',
+    link: 'https://medium.com/@meerthika/kernel-series-part-1-1-understanding-linux-filesystems-files-inodes-and-directory-internals-788d6a51d0e8?sharedUserId=meerthika',
+    isSeries: true,
+    seriesTitle: 'Kernel Series',
+    part: 'Part 1.1'
+  },
   {
     id: '1',
     title: '🐳 Understand Docker : Architecture, Workflow, and Production Best Practices',
@@ -444,9 +473,9 @@ export const VIDEOS: Video[] = [
 export const REVIEWS = [
   {
     id: '1',
-    name: 'Arjun Mehta',
-    role: 'Systems Architect',
-    company: 'TechCorp / Ex-Google',
+    name: 'Aren Melinda Grace',
+    role: 'Final Year CS Student',
+    company: 'Computer Science',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     review: 'Building Kira-Kafka from scratch opened my eyes to zero-copy reads and memory-mapped I/O. Rootsprouthub is hands down the best place to understand production system internals!',
@@ -455,20 +484,20 @@ export const REVIEWS = [
   },
   {
     id: '2',
-    name: 'Sophia Chen',
-    role: 'Infrastructure Engineer',
-    company: 'CloudNative Labs',
+    name: 'Dharshana',
+    role: 'AI Engineer',
+    company: 'Pinnacle Labs',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',
     rating: 5,
-    review: 'The NGINX internals book and transport protocol breakdowns are masterclasses in first-principles engineering. Essential reading for every serious developer.',
-    projectOrTopic: 'Inside NGINX Book',
+    review: 'The NGINX internals book and Kernel Series filesystem breakdowns are masterclasses in first-principles engineering. Essential reading for every serious developer.',
+    projectOrTopic: 'Kernel Series & NGINX Book',
     verified: true
   },
   {
     id: '3',
-    name: 'David K. Miller',
+    name: 'Muthuselvi',
     role: 'CS Researcher & Fellow',
-    company: 'Stanford University',
+    company: 'Systems & Architecture Lab',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
     rating: 5,
     review: 'Rootsprouthub bridges the gap between high-level frameworks and actual kernel-level execution. The hands-on C projects like AutoNormDB are phenomenal!',

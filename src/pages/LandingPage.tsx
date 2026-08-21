@@ -4,22 +4,24 @@ import {
   ArrowRight, Star, Users, Zap, Github, Code2, 
   Shield, Globe, ChevronRight, ShoppingCart, Linkedin, Youtube, 
   Instagram, Play, Clock, Sparkles, Terminal, ArrowUpRight, CheckCircle2,
-  Quote, Check, Mail, Send, Bell
+  Quote, Check, Mail, Send, Bell, Award, BookOpen, Cpu, Layers, ExternalLink, Flame
 } from 'lucide-react';
 import { BLOGS, PROJECTS, PARTNERS, VIDEOS, REVIEWS } from '../constants';
 import { Link } from 'react-router-dom';
+import founderPortrait from '../assets/founder_portrait.png';
 
 const MarqueeTicker = () => {
   const items = [
     "ROOTSPROUTHUB",
+    "FOUNDER: MEERTHIKA SR",
     "OPEN SOURCE ECOSYSTEM",
     "BUILD LOW-LEVEL SYSTEMS",
     "KERNELS & DATABASES",
+    "KERNEL SERIES PART 1.1 & 1.2",
     "FIRST PRINCIPLES",
     "100+ GITHUB STARS",
     "500+ BUILDERS",
-    "C & RUST ENGINEERING",
-    "COMPILERS & NETWORKING"
+    "C, GO & RUST ENGINEERING"
   ];
 
   return (
@@ -36,10 +38,143 @@ const MarqueeTicker = () => {
   );
 };
 
-/* Redesigned Hero Section with Unified font-display */
+/* About the Founder Feature Section with Header Above Card */
+const FounderSection = () => {
+  return (
+    <section id="founder" className="py-16 sm:py-24 relative border-t border-white/10 bg-gradient-to-b from-[#070709] via-[#0B0C12] to-[#070709] overflow-hidden">
+      {/* Background Lighting Glows */}
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-[#FFC300]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FF4D23]/10 rounded-full blur-[170px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        {/* Prominent Section Header Above Card */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white whitespace-normal break-normal">
+            About the <span className="text-gradient-gold">Founder</span>
+          </h2>
+        </div>
+
+        <div className="glass-card rounded-[32px] sm:rounded-[36px] p-6 sm:p-10 md:p-12 border-white/15 shadow-2xl relative overflow-hidden bg-[#0A0B10]/90">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column: Founder Photo & Floating Badges */}
+            <div className="lg:col-span-5 relative flex justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-sm aspect-square rounded-3xl overflow-hidden border-2 border-[#FFC300]/40 p-2 shadow-[0_0_50px_rgba(255,195,0,0.25)] group">
+                <img 
+                  src={founderPortrait} 
+                  alt="Meerthika SR - Founder of Rootsprouthub" 
+                  className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent opacity-60 rounded-2xl" />
+                
+                <div className="absolute bottom-3 left-3 right-3 z-10 glass p-3 rounded-xl border-white/15 backdrop-blur-md">
+                  <div className="text-sm font-bold font-display text-white">Meerthika SR</div>
+                  <div className="text-[11px] font-mono text-[#FFC300]">Founder & Backend Engineer</div>
+                </div>
+              </div>
+
+              {/* Floating Badge 1: Low-level Enthusiast */}
+              <motion.div
+                animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-3 -left-2 sm:-left-6 bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl font-mono font-bold text-[10px] sm:text-xs flex items-center gap-1.5 border border-black/10 z-20"
+              >
+                <Cpu className="w-3.5 h-3.5 text-black" />
+                <span>Low-level Enthusiast</span>
+              </motion.div>
+
+              {/* Floating Badge 2: Build Systems */}
+              <motion.div
+                animate={{ y: [0, 8, 0], scale: [1, 1.03, 1] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-3 -right-2 sm:-right-6 bg-[#3B82F6] text-white px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl font-mono font-bold text-[10px] sm:text-xs flex items-center gap-1.5 border border-white/20 z-20"
+              >
+                <Layers className="w-3.5 h-3.5 text-white" />
+                <span>Build Systems</span>
+              </motion.div>
+            </div>
+
+            {/* Right Column: Founder Info */}
+            <div className="lg:col-span-7 space-y-5">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/30 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                  <Award className="w-3.5 h-3.5" />
+                  <span>FOUNDER CREDENTIALS</span>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-extrabold font-display text-white">
+                  Meerthika SR
+                </h3>
+                <p className="text-xs sm:text-sm font-mono text-white/50 mt-1">
+                  Full Stack & Backend Developer (Golang, Java, C, Rust) • CNCF Contributor
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                "I specialize in building high-performance backend systems, distributed microservices, and low-level Linux tools. I founded Rootsprouthub to help developers break complex software down to its first principles and build production-grade engines from scratch."
+              </p>
+
+              {/* Key Credentials Badges Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
+                <div className="glass p-3 rounded-xl border-white/10 text-xs font-mono">
+                  <div className="text-[#FFC300] font-bold">Maintainer</div>
+                  <div className="text-white/50 text-[10px]">at Rootsprouthub</div>
+                </div>
+                <div className="glass p-3 rounded-xl border-white/10 text-xs font-mono">
+                  <div className="text-[#FFC300] font-bold">CNCF Contributor</div>
+                  <div className="text-white/50 text-[10px]">Flatcar Linux & sysext</div>
+                </div>
+                <div className="glass p-3 rounded-xl border-white/10 text-xs font-mono">
+                  <div className="text-[#FFC300] font-bold">Author</div>
+                  <div className="text-white/50 text-[10px]">Inside NGINX Book</div>
+                </div>
+              </div>
+
+              {/* Social Links Row */}
+              <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-mono">
+                <a 
+                  href="https://github.com/mery-top" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="px-3.5 py-1.5 rounded-full glass border-white/15 text-white hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors flex items-center gap-1.5"
+                >
+                  <Github className="w-3.5 h-3.5 text-[#FFC300]" /> GitHub (@mery-top)
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/meerthika" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="px-3.5 py-1.5 rounded-full glass border-white/15 text-white hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors flex items-center gap-1.5"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-[#FFC300]" /> LinkedIn
+                </a>
+                <a 
+                  href="https://medium.com/@meerthika" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="px-3.5 py-1.5 rounded-full glass border-white/15 text-white hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors flex items-center gap-1.5"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-[#FFC300]" /> Medium Articles
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* Helper Cloud Icon for AWS */
+const CloudIcon = (props: any) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19px 5 19a4.5 4.5 0 1 1 1.2-8.8 6 6 0 1 1 11.4 2.2 4.5 4.5 0 0 1 0 8.6Z"/></svg>
+);
+
+/* Redesigned Hero Section */
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-between pt-28 pb-0 overflow-hidden bg-grid">
+    <section className="relative min-h-[85vh] flex flex-col justify-between pt-28 pb-0 overflow-hidden bg-grid">
       {/* Background Ambient Lighting */}
       <div className="absolute top-1/4 -left-32 w-[550px] h-[550px] bg-[#FFC300]/15 rounded-full blur-[160px] animate-ethereal-1 pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-[600px] h-[600px] bg-[#FF4D23]/15 rounded-full blur-[170px] animate-ethereal-2 pointer-events-none" />
@@ -61,7 +196,7 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* Display Title - Using font-display uniformly */}
+            {/* Display Title */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[0.96] text-white whitespace-normal break-normal">
               Build. Break. <br />
               Rebuild. <br />
@@ -69,7 +204,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-white/70 max-w-xl leading-relaxed">
-              Rootsprouthub is a free, open-source platform that helps students and developers build low-level systems from scratch to understand production software architecture.
+              Rootsprouthub is a free, open-source platform founded by Meerthika SR that helps students and developers build low-level systems from scratch to understand production software architecture.
             </p>
 
             {/* Hero CTAs */}
@@ -82,12 +217,12 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <Link 
-                to="/community" 
+              <a
+                href="#partners"
                 className="glass px-7 sm:px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white hover:bg-white/10 border border-white/15 transition-all duration-300 hover:scale-[1.03]"
               >
-                Join Community
-              </Link>
+                Latest About Community
+              </a>
             </div>
           </motion.div>
 
@@ -133,27 +268,27 @@ const Hero = () => {
 
             {/* Levitating Graphic Badges */}
             <motion.div
-              animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -left-6 z-20 hidden sm:flex items-center gap-2 bg-[#FF4D23] text-white px-4 py-2.5 rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-sm"
+              animate={{ y: [0, -12, 0], rotate: [0, 4, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-5 -left-3 sm:-top-6 sm:-left-6 z-20 flex items-center gap-2 bg-[#FF4D23] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
-              <span className="w-3 h-3 rounded-full bg-white animate-ping" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
               <span>100+ GitHub Stars</span>
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 15, 0], rotate: [0, -4, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -right-6 z-20 hidden sm:flex items-center gap-2 bg-[#3B82F6] text-white px-4 py-2.5 rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-sm"
+              animate={{ y: [0, 12, 0], rotate: [0, -4, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center gap-2 bg-[#3B82F6] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
-              <Users className="w-4 h-4 text-white" />
+              <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
               <span>500+ Ecosystem Builders</span>
             </motion.div>
 
             <motion.div
-              animate={{ scale: [1, 1.08, 1], rotate: [0, 8, 0] }}
+              animate={{ scale: [1, 1.08, 1], rotate: [0, 6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute top-1/2 -right-10 z-20 hidden lg:flex bg-[#FFC300] text-black px-4 py-2 rounded-2xl shadow-[0_15px_30px_rgba(255,195,0,0.4)] border border-black/10 font-mono font-bold text-xs"
+              className="absolute top-1/2 -right-4 sm:-right-10 z-20 flex bg-[#FFC300] text-black px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,195,0,0.4)] border border-black/10 font-mono font-bold text-[10px] sm:text-xs"
             >
               ⚡ 29+ Projects Built
             </motion.div>
@@ -398,7 +533,7 @@ const LandingPage = () => {
                       />
                       <div>
                         <h4 className="text-base font-bold font-display text-white">{rev.name}</h4>
-                        <p className="text-xs font-mono text-white/50">{rev.role} • {rev.company}</p>
+                        <p className="text-xs font-mono text-white/50">{rev.role} {rev.company && `• ${rev.company}`}</p>
                       </div>
                     </div>
                     <div className="flex text-[#FFC300]">
@@ -480,23 +615,30 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 6. LATEST INSIGHTS (BLOGS) */}
+      {/* 6. ABOUT THE FOUNDER SECTION */}
+      <FounderSection />
+
+      {/* 7. LATEST INSIGHTS */}
       <section id="blogs" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
             <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/30 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                <Cpu className="w-3.5 h-3.5" />
+                <span>FEATURED SERIES</span>
+              </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight whitespace-normal break-normal">
                 Latest <span className="text-gradient-gold">Insights</span>
               </h2>
               <p className="text-white/60 text-sm sm:text-base mt-2 max-w-lg">
-                Deep dives into compiler design, kernel execution, distributed consensus, and system engineering.
+                Deep dives into Linux filesystems, inodes, memory mapping, and system engineering.
               </p>
             </div>
             <Link 
               to="/blogs" 
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#FFC300] hover:text-white transition-colors group"
             >
-              <span>View All Blogs</span> 
+              <span>View All Series & Articles</span> 
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -517,7 +659,13 @@ const LandingPage = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                       referrerPolicy="no-referrer" 
                     />
-                    <div className="absolute top-4 left-4 flex gap-2 z-10">
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
+                      {blog.isSeries && (
+                        <span className="px-2.5 py-1 bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black font-mono font-extrabold text-[10px] uppercase tracking-wider rounded-md shadow-lg flex items-center gap-1">
+                          <Flame className="w-3 h-3 text-black" />
+                          {blog.seriesTitle} • {blog.part}
+                        </span>
+                      )}
                       {blog.tags.map(tag => (
                         <span key={tag} className="px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/10 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider text-[#FFC300]">
                           {tag}
@@ -529,7 +677,7 @@ const LandingPage = () => {
 
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs font-mono text-white/40 mb-3">
-                    <span>{blog.author}</span>
+                    <span className="text-[#FFC300] font-semibold">{blog.author}</span>
                     <span>•</span>
                     <span>{blog.readTime} read</span>
                   </div>
@@ -540,13 +688,17 @@ const LandingPage = () => {
                     </h3>
                   </a>
 
+                  <p className="text-xs text-white/60 mb-6 leading-relaxed line-clamp-3">
+                    {blog.excerpt}
+                  </p>
+
                   <a 
                     href={blog.link} 
                     target="_blank" 
                     rel="noreferrer" 
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FFC300] group-hover:text-white transition-colors"
                   >
-                    <span>Read Article</span> 
+                    <span>Read Article on Medium</span> 
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -556,7 +708,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 7. VIDEO SESSIONS */}
+      {/* 8. VIDEO SESSIONS */}
       <section id="videos" className="py-20 sm:py-28 relative border-t border-white/5 bg-[#050507]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">
@@ -625,7 +777,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 8. SPONSORSHIP SECTION */}
+      {/* 9. SPONSORSHIP SECTION */}
       <section id="sponsorship" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="glass-card border border-white/15 rounded-3xl p-6 sm:p-10 md:p-14 grid md:grid-cols-12 gap-8 items-center bg-[#0A0B10]">
