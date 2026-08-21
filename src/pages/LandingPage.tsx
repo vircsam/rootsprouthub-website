@@ -10,6 +10,7 @@ import { BLOGS, PROJECTS, PARTNERS, VIDEOS, REVIEWS } from '../constants';
 import { Link } from 'react-router-dom';
 import founderPortrait from '../assets/founder_portrait.png';
 import latentLayerLogo from '../assets/latent_layer_logo.png';
+import SpeakerSection from '../components/SpeakerSection';
 
 const MarqueeTicker = () => {
   const items = [
@@ -778,7 +779,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 9. SPONSORSHIP SECTION */}
+      {/* 9. SPEAKER CONTACT SECTION */}
+      <SpeakerSection />
+
+      {/* 10. SPONSORSHIP SECTION */}
       <section id="sponsorship" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="glass-card border border-white/15 rounded-3xl p-6 sm:p-10 md:p-14 grid md:grid-cols-12 gap-8 items-center bg-[#0A0B10]">
