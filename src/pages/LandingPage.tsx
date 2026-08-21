@@ -333,7 +333,7 @@ const WeeklyNewsletter = () => {
                 </a>
               </div>
 
-              {/* Logo & Headline Row */}
+              {/* Headline Row */}
               <div className="pt-1 text-center lg:text-left w-full">
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight break-words">
                   Subscribe to our <br className="hidden sm:inline" />
@@ -348,24 +348,25 @@ const WeeklyNewsletter = () => {
 
             {/* Right Interactive Subscription Card Column (Official Beehiiv Link Card) */}
             <div className="lg:col-span-5 w-full">
-              <div className="glass p-5 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl w-full">
+              <div className="glass p-5 sm:p-7 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl w-full">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
 
-                <div className="space-y-6 relative z-10">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4 gap-2">
+                <div className="space-y-5 relative z-10">
+                  {/* Header Row */}
+                  <div className="flex flex-wrap items-center justify-between border-b border-white/10 pb-4 gap-2">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <img src={latentLayerLogo} alt="The Latent Layer Logo" className="w-7 h-7 rounded object-contain border border-[#FFC300]/40 flex-shrink-0" />
                       <div className="min-w-0">
-                        <h3 className="text-sm sm:text-base font-extrabold font-display text-white truncate">The Latent Layer</h3>
+                        <h3 className="text-sm sm:text-base font-extrabold font-display text-white whitespace-nowrap">The Latent Layer</h3>
                         <p className="text-[11px] font-mono text-[#FFC300]">Official Beehiiv Publication</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono text-white/60 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 flex-shrink-0">
+                    <span className="text-[10px] font-mono text-white/70 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 flex-shrink-0">
                       Weekly Edition
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed text-center sm:text-left">
                     Get weekly tech news, low-level system engineering breakdowns, and architecture deep-dives delivered straight to your inbox.
                   </p>
 
@@ -374,18 +375,19 @@ const WeeklyNewsletter = () => {
                     href="https://rootsprout.beehiiv.com/"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-4 px-5 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border border-black/10 text-center"
+                    className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border border-black/10 text-center"
                   >
                     <span>Subscribe to The Latent Layer</span>
                     <ExternalLink className="w-4 h-4 flex-shrink-0" />
                   </a>
 
-                  <div className="pt-2 text-[10px] sm:text-[11px] font-mono text-center text-white/40 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-                    <span>🔥 Available Weekly</span>
+                  {/* Footer bullet tags */}
+                  <div className="pt-1 text-[11px] font-mono text-center text-white/50 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+                    <span>🔥 Weekly</span>
                     <span>•</span>
                     <span>100% Free</span>
                     <span>•</span>
-                    <span>Unsubscribe anytime</span>
+                    <span>Cancel anytime</span>
                   </div>
                 </div>
               </div>
