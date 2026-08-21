@@ -29,7 +29,7 @@ const BlogsPage = () => {
             <BookOpen className="w-3.5 h-3.5" />
             <span>KNOWLEDGE ARCHIVE</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display tracking-tight mb-4 whitespace-normal break-normal">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold font-display tracking-tight leading-tight mb-4 break-words">
             Rootsprouthub <span className="text-gradient-gold">Insights</span>
           </h1>
           <p className="text-sm sm:text-base text-white/60 max-w-2xl leading-relaxed">

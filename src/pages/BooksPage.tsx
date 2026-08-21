@@ -5,16 +5,16 @@ import { Star, ShoppingCart } from 'lucide-react';
 
 const BooksPage = () => {
   return (
-    <div className="pt-36 pb-28 bg-[#070709] text-white min-h-screen bg-grid">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
+    <div className="pt-28 sm:pt-36 pb-28 bg-[#070709] text-white min-h-screen bg-grid">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="mb-12 sm:mb-16">
           <div className="text-xs font-mono text-[#FFC300] uppercase tracking-widest font-bold mb-2">
             ( PUBLICATIONS & BLUEPRINTS )
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold font-display tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold font-display tracking-tight leading-tight mb-4 sm:mb-6 break-words">
             Rootsprouthub <span className="text-gradient-gold">Originals</span>
           </h1>
-          <p className="text-lg text-white/60 max-w-2xl leading-relaxed font-normal">
+          <p className="text-sm sm:text-lg text-white/60 max-w-2xl leading-relaxed font-normal">
             Exclusive publications from the Rootsprouthub community, crafted to elevate your low-level system design expertise.
           </p>
         </div>

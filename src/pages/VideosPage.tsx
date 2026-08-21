@@ -5,11 +5,11 @@ import { Play, Clock } from 'lucide-react';
 
 const VideosPage = () => {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6">Rootsprout <span className="text-gradient-gold">Videos</span></h1>
-          <p className="text-xl text-white/60 max-w-2xl">
+    <div className="pt-28 sm:pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black font-display tracking-tight leading-tight mb-4 sm:mb-6 break-words">Rootsprout <span className="text-gradient-gold">Videos</span></h1>
+          <p className="text-base sm:text-xl text-white/60 max-w-2xl leading-relaxed">
             Short, focused sessions on building real systems from scratch and understanding production internals.
           </p>
         </div>

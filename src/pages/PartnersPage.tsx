@@ -5,11 +5,11 @@ import { Shield, Zap, Globe, Users } from 'lucide-react';
 
 const PartnersPage = () => {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <h1 className="text-5xl md:text-7xl font-black mb-6">Our <span className="text-gradient-gold">Community Partnerships</span></h1>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+    <div className="pt-28 sm:pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-16 sm:mb-24">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black font-display tracking-tight leading-tight mb-4 sm:mb-6 break-words">Our <span className="text-gradient-gold">Community Partnerships</span></h1>
+          <p className="text-base sm:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
             We collaborate with communities, clubs, and student organizations to grow open-source together.
           </p>
         </div>

@@ -198,7 +198,7 @@ const Hero = () => {
             </div>
 
             {/* Display Title */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[0.96] text-white whitespace-normal break-normal">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight leading-[0.96] text-white break-words">
               Build. Break. <br />
               Rebuild. <br />
               <span className="text-gradient-ethereal">Learn.</span>
@@ -335,7 +335,7 @@ const WeeklyNewsletter = () => {
               {/* Logo & Headline Row */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
                 <div>
-                  <h2 className="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight leading-tight whitespace-normal break-normal">
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight break-words">
                     The Latent Layer <br />
                     <span className="text-gradient-gold">Newsletter</span>
                   </h2>
@@ -349,18 +349,18 @@ const WeeklyNewsletter = () => {
 
             {/* Right Interactive Subscription Card Column */}
             <div className="lg:col-span-5">
-              <div className="glass p-6 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
+              <div className="glass p-5 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
 
                 <div className="space-y-5 relative z-10">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-2">
-                      <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40" />
-                      <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider">
+                  <div className="flex flex-wrap sm:flex-nowrap items-center justify-between border-b border-white/10 pb-3 gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <img src={latentLayerLogo} alt="Logo" className="w-5 h-5 rounded object-contain border border-[#FFC300]/40 flex-shrink-0" />
+                      <span className="text-xs font-mono font-bold uppercase text-[#FFC300] tracking-wider truncate">
                         The Latent Layer
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10">
+                    <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2 py-0.5 rounded-full border border-white/10 flex-shrink-0">
                       Weekly Edition
                     </span>
                   </div>
@@ -369,20 +369,18 @@ const WeeklyNewsletter = () => {
                     href="https://rootsprout.beehiiv.com/"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10"
+                    className="w-full py-4 px-3 rounded-xl bg-gradient-to-r from-[#FFC300] via-[#FFB800] to-[#FF9900] text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,195,0,0.3)] hover:shadow-[0_0_45px_rgba(255,195,0,0.5)] hover:scale-[1.02] transition-all cursor-pointer group border border-black/10 text-center leading-snug"
                   >
-                    <span>Subscribe to The Latent Layer</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="truncate">Subscribe to The Latent Layer</span>
+                    <ExternalLink className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
 
-                  <div className="pt-1 text-[11px] font-mono text-center text-white/40 flex flex-col items-center gap-1.5">
-                    <div className="flex items-center gap-2">
-                      <span>🔥  Available Weekly</span>
-                      <span>•</span>
-                      <span>100% Free</span>
-                      <span>•</span>
-                      <span>Unsubscribe anytime</span>
-                    </div>
+                  <div className="pt-1 text-[10px] sm:text-[11px] font-mono text-center text-white/40 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+                    <span>🔥 Available Weekly</span>
+                    <span>•</span>
+                    <span>100% Free</span>
+                    <span>•</span>
+                    <span>Unsubscribe anytime</span>
                   </div>
                 </div>
               </div>

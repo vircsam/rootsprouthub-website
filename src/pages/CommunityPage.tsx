@@ -19,7 +19,7 @@ const CommunityPage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display mb-6 leading-tight break-normal whitespace-normal tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold font-display mb-4 sm:mb-6 leading-tight tracking-tight break-words">
               A Community <br />
               <span className="text-gradient-gold">Without Borders.</span>
             </h1>
