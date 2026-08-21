@@ -29,14 +29,24 @@ const SpeakerSection = () => {
           <div className="flex flex-col items-center justify-center relative z-10">
             <div className="relative mb-10 sm:mb-12 group flex justify-center">
               
-              {/* Speaker Card Frame - Box included, image filling the box */}
-              <div className="relative w-80 sm:w-[440px] md:w-[480px] h-[400px] sm:h-[520px] md:h-[560px] overflow-hidden rounded-3xl border-2 border-[#FFC300]/50 glass bg-[#070709] shadow-xl group">
+              {/* Speaker Card Frame - Larger Image Frame */}
+              <div className="relative w-88 sm:w-[500px] md:w-[560px] h-[450px] sm:h-[580px] md:h-[640px] overflow-hidden rounded-3xl border-2 border-[#FFC300]/50 glass bg-[#070709] shadow-2xl group">
                 <img 
                   src={speakerPortrait} 
                   alt="Meerthika SR - Speaker" 
-                  className="w-full h-full object-cover object-top filter brightness-105 contrast-105 saturate-105 group-hover:scale-105 transition-all duration-700 block" 
+                  className="w-full h-full object-cover object-[center_15%] filter brightness-105 contrast-105 saturate-105 group-hover:scale-105 transition-all duration-700 block" 
                 />
                 
+                {/* Floating Keynote Speaker Badge (Positioned closely inside/top of image frame) */}
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl font-mono font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-xl border border-black/10 z-20"
+                >
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black" />
+                  <span>Keynote Speaker</span>
+                </motion.div>
+
                 {/* Floating Name Overlay at Bottom of Image */}
                 <div className="absolute inset-x-3 bottom-3 p-3.5 sm:p-4 rounded-2xl bg-[#070709]/85 border border-white/10 backdrop-blur-md">
                   <div className="text-base sm:text-lg font-bold font-display text-white">Meerthika SR</div>
@@ -46,16 +56,6 @@ const SpeakerSection = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Floating Keynote Speaker Badge */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-3 -left-2 sm:-left-6 bg-gradient-to-r from-[#FFC300] to-[#FF9900] text-black px-4 py-2 rounded-xl font-mono font-bold text-xs sm:text-sm flex items-center gap-2 shadow-xl border border-black/10 z-20"
-              >
-                <Sparkles className="w-4 h-4 text-black" />
-                <span>Keynote Speaker</span>
-              </motion.div>
             </div>
 
             {/* Action CTAs: Contact Email Link & Previous Events Button */}
