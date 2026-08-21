@@ -4,17 +4,20 @@ import { BLOGS } from '../constants';
 import { ArrowRight, Cpu, Layers, BookOpen, Sparkles } from 'lucide-react';
 
 const BlogsPage = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'series' | 'from-scratch'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'series' | 'from-scratch' | 'deep-dive'>('all');
 
   const seriesBlogs = BLOGS.filter(b => b.isSeries);
   const fromScratchBlogs = BLOGS.filter(b => b.tags.includes('From Scratch'));
+  const deepDiveBlogs = BLOGS.filter(b => b.tags.includes('Deep Dive'));
 
   const displayedBlogs = 
     activeTab === 'series' 
       ? seriesBlogs 
       : activeTab === 'from-scratch' 
         ? fromScratchBlogs 
-        : BLOGS;
+        : activeTab === 'deep-dive'
+          ? deepDiveBlogs
+          : BLOGS;
 
   return (
     <div className="pt-36 pb-28 bg-[#070709] text-white min-h-screen bg-grid">
@@ -33,7 +36,7 @@ const BlogsPage = () => {
             Deep dives into open source systems, low-level Linux kernel internals, compiler design, and backend engineering architecture.
           </p>
 
-          {/* Series / From Scratch / All Filter Tabs */}
+          {/* Series / From Scratch / Deep Dive / All Filter Tabs */}
           <div className="flex flex-wrap items-center gap-3 pt-6">
             <button
               onClick={() => setActiveTab('all')}
@@ -56,6 +59,18 @@ const BlogsPage = () => {
             >
               <Cpu className="w-3.5 h-3.5" />
               <span>Kernel Series ({seriesBlogs.length})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('deep-dive')}
+              className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                activeTab === 'deep-dive'
+                  ? 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white shadow-lg scale-105'
+                  : 'glass text-[#60A5FA] border-[#3B82F6]/30 hover:border-[#3B82F6]'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5 text-[#60A5FA]" />
+              <span>Deep Dive ({deepDiveBlogs.length})</span>
             </button>
 
             <button

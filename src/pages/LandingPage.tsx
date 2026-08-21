@@ -266,23 +266,23 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Levitating Graphic Badges */}
+            {/* Levitating Graphic Badges - ENHANCED MOBILE WIDTH */}
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 4, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-5 -left-3 sm:-top-6 sm:-left-6 z-20 flex items-center gap-2 bg-[#FF4D23] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
+              className="absolute -top-5 -left-3 sm:-top-6 sm:-left-6 z-20 flex items-center justify-center gap-2 bg-[#FF4D23] text-white px-4 py-2.5 sm:px-5 sm:py-3 min-w-[155px] sm:min-w-fit rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(255,77,35,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
-              <span>100+ GitHub Stars</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping flex-shrink-0" />
+              <span className="whitespace-nowrap">100+ GitHub Stars</span>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 12, 0], rotate: [0, -4, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center gap-2 bg-[#3B82F6] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
+              className="absolute -bottom-5 -right-3 sm:-bottom-6 sm:-right-6 z-20 flex items-center justify-center gap-2 bg-[#3B82F6] text-white px-4 py-2.5 sm:px-5 sm:py-3 min-w-[195px] sm:min-w-fit rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(59,130,246,0.4)] border border-white/20 font-display font-extrabold text-xs sm:text-sm"
             >
-              <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-              <span>500+ Ecosystem Builders</span>
+              <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white flex-shrink-0" />
+              <span className="whitespace-nowrap">500+ Ecosystem Builders</span>
             </motion.div>
 
             <motion.div
