@@ -308,15 +308,15 @@ const WeeklyNewsletter = () => {
   return (
     <section id="newsletter" className="py-14 sm:py-24 relative border-t border-white/10 bg-[#050507]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card border border-[#FFC300]/25 rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 md:p-12 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
+        <div className="glass-card border border-[#FFC300]/25 rounded-[28px] sm:rounded-[36px] p-5 sm:p-10 md:p-12 relative overflow-hidden bg-gradient-to-br from-[#0E0E14] via-[#070709] to-[#0E0E14] shadow-[0_0_80px_rgba(255,195,0,0.15)]">
           {/* Ambient Lighting Glow Orbs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFC300]/15 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF4D23]/10 rounded-full blur-[160px] pointer-events-none" />
 
           <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <div className="lg:col-span-7 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 w-full">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFC300]/10 border border-[#FFC300]/40 text-[#FFC300] text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(255,195,0,0.2)]">
                   <span className="w-2 h-2 rounded-full bg-[#FFC300] animate-ping" />
                   <Bell className="w-3.5 h-3.5" />
@@ -326,7 +326,7 @@ const WeeklyNewsletter = () => {
                   href="https://rootsprout.beehiiv.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
                 >
                   <span>rootsprout.beehiiv.com</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
@@ -334,23 +334,21 @@ const WeeklyNewsletter = () => {
               </div>
 
               {/* Logo & Headline Row */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1">
-                <div>
-                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight break-words">
-                    The Latent Layer <br className="hidden sm:inline" />
-                    <span className="text-gradient-gold">Newsletter</span>
-                  </h2>
-                </div>
+              <div className="pt-1 text-center lg:text-left w-full">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-tight break-words">
+                  Subscribe to our <br className="hidden sm:inline" />
+                  <span className="text-gradient-gold">Newsletter</span>
+                </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-xs sm:text-base text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed text-center lg:text-left">
                 Subscribe to <strong className="text-[#FFC300] font-bold">The Latent Layer</strong> newsletter on Beehiiv. Join developers getting our weekly Tech News and deep-dives on AI, System architecture, and Design.
               </p>
             </div>
 
             {/* Right Interactive Subscription Card Column (Official Beehiiv Link Card) */}
             <div className="lg:col-span-5 w-full">
-              <div className="glass p-6 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl w-full">
+              <div className="glass p-5 sm:p-8 rounded-3xl border-[#FFC300]/30 bg-[#0A0B10]/95 shadow-2xl relative overflow-hidden backdrop-blur-2xl w-full">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC300]/10 rounded-full blur-[60px] pointer-events-none" />
 
                 <div className="space-y-6 relative z-10">

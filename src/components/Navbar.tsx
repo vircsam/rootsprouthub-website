@@ -21,10 +21,24 @@ const Navbar = () => {
     { name: 'Projects', href: '/projects' },
     { name: 'Books', href: '/books' },
     { name: 'Events', href: '/events' },
+    { name: 'Speaker', href: '/#speaker-contact' },
     { name: 'Partners', href: '/partners' },
     { name: 'Community', href: '/community' },
     { name: 'Sponsorship', href: '/sponsorship' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.includes('#speaker-contact')) {
+      if (location.pathname === '/') {
+        e.preventDefault();
+        const el = document.getElementById('speaker-contact');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 max-w-full ${isScrolled ? 'glass py-3 border-b border-white/10 shadow-2xl backdrop-blur-xl bg-[#070709]/90' : 'bg-transparent py-5 sm:py-6'}`}>
@@ -42,14 +56,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-1 bg-white/[0.03] p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+        <div className="hidden lg:flex items-center gap-1 bg-white/[0.03] p-1 rounded-full border border-white/10 backdrop-blur-md">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
             return (
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`relative px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   isActive 
                     ? 'text-black font-bold bg-[#FFC300] shadow-[0_0_15px_rgba(255,195,0,0.4)]' 
                     : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -97,10 +112,10 @@ const Navbar = () => {
                 <Link 
                   key={link.name} 
                   to={link.href} 
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={`px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center justify-between ${
                     location.pathname === link.href ? 'bg-[#FFC300] text-black font-bold' : 'text-white/80 hover:bg-white/5'
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span>{link.name}</span>
                   <ArrowUpRight className="w-4 h-4 opacity-50" />
