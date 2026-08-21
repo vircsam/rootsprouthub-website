@@ -495,7 +495,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 4. COMMUNITY REVIEWS & TESTIMONIALS */}
+      {/* 4. ABOUT THE FOUNDER SECTION (MOVED BEFORE LOVED BY SYSTEM BUILDERS) */}
+      <FounderSection />
+
+      {/* 5. COMMUNITY REVIEWS & TESTIMONIALS */}
       <section id="reviews" className="py-20 sm:py-28 relative border-t border-white/5 bg-[#050507]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -615,10 +618,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 6. ABOUT THE FOUNDER SECTION */}
-      <FounderSection />
-
-      {/* 7. LATEST INSIGHTS */}
+      {/* 6. LATEST INSIGHTS */}
       <section id="blogs" className="py-20 sm:py-28 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 sm:gap-6">

@@ -46,6 +46,9 @@ import video7 from './assets/videos/7.png';
 import video8 from './assets/videos/8.png';
 import video9 from './assets/videos/9.png';
 import kernelSeriesCover from './assets/blogs/kernel_series_cover.jpg';
+import dharshanaAvatar from './assets/reviews/dharshana.jpg';
+import muthuselviAvatar from './assets/reviews/muthuselvi.jpg';
+import arenAvatar from './assets/reviews/aren.jpg';
 
 export const BLOGS: Blog[] = [
   {
@@ -91,7 +94,7 @@ export const BLOGS: Blog[] = [
     id: '2',
     title: 'Building a Frame-based Custom Transport Protocol in C.',
     author: 'Rootsprout Editorial',
-    tags: ['Networking', 'C'],
+    tags: ['From Scratch', 'Networking', 'C'],
     readTime: '11 min',
     date: 'Nov 10, 2025',
     image: blog2,
@@ -113,7 +116,7 @@ export const BLOGS: Blog[] = [
     id: '4',
     title: 'Building a Shell in C: Understanding Fork, Pipes, and File Descriptors',
     author: 'Rootsprout Editorial',
-    tags: ['Unix', 'C'],
+    tags: ['From Scratch', 'Unix', 'C'],
     readTime: '12 min',
     date: 'Sep 7, 2025',
     image: blog4,
@@ -476,7 +479,7 @@ export const REVIEWS = [
     name: 'Aren Melinda Grace',
     role: 'Final Year CS Student',
     company: 'Computer Science',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    avatar: arenAvatar,
     rating: 5,
     review: 'Building Kira-Kafka from scratch opened my eyes to zero-copy reads and memory-mapped I/O. Rootsprouthub is hands down the best place to understand production system internals!',
     projectOrTopic: 'Kira-Kafka Project',
@@ -487,7 +490,7 @@ export const REVIEWS = [
     name: 'Dharshana',
     role: 'AI Engineer',
     company: 'Pinnacle Labs',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',
+    avatar: dharshanaAvatar,
     rating: 5,
     review: 'The NGINX internals book and Kernel Series filesystem breakdowns are masterclasses in first-principles engineering. Essential reading for every serious developer.',
     projectOrTopic: 'Kernel Series & NGINX Book',
@@ -498,7 +501,7 @@ export const REVIEWS = [
     name: 'Muthuselvi',
     role: 'CS Researcher & Fellow',
     company: 'Systems & Architecture Lab',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    avatar: muthuselviAvatar,
     rating: 5,
     review: 'Rootsprouthub bridges the gap between high-level frameworks and actual kernel-level execution. The hands-on C projects like AutoNormDB are phenomenal!',
     projectOrTopic: 'AutoNormDB Engine',

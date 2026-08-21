@@ -4,10 +4,17 @@ import { BLOGS } from '../constants';
 import { ArrowRight, Cpu, Layers, BookOpen, Sparkles } from 'lucide-react';
 
 const BlogsPage = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'series'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'series' | 'from-scratch'>('all');
 
   const seriesBlogs = BLOGS.filter(b => b.isSeries);
-  const displayedBlogs = activeTab === 'series' ? seriesBlogs : BLOGS;
+  const fromScratchBlogs = BLOGS.filter(b => b.tags.includes('From Scratch'));
+
+  const displayedBlogs = 
+    activeTab === 'series' 
+      ? seriesBlogs 
+      : activeTab === 'from-scratch' 
+        ? fromScratchBlogs 
+        : BLOGS;
 
   return (
     <div className="pt-36 pb-28 bg-[#070709] text-white min-h-screen bg-grid">
@@ -26,8 +33,8 @@ const BlogsPage = () => {
             Deep dives into open source systems, low-level Linux kernel internals, compiler design, and backend engineering architecture.
           </p>
 
-          {/* Series / All Filter Tabs */}
-          <div className="flex items-center gap-3 pt-6">
+          {/* Series / From Scratch / All Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-3 pt-6">
             <button
               onClick={() => setActiveTab('all')}
               className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all cursor-pointer ${
@@ -49,6 +56,18 @@ const BlogsPage = () => {
             >
               <Cpu className="w-3.5 h-3.5" />
               <span>Kernel Series ({seriesBlogs.length})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('from-scratch')}
+              className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                activeTab === 'from-scratch'
+                  ? 'bg-gradient-to-r from-[#FF4D23] to-[#FF9900] text-white shadow-lg scale-105'
+                  : 'glass text-white/80 border-white/15 hover:border-[#FF4D23]'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#FF4D23]" />
+              <span>From Scratch ({fromScratchBlogs.length})</span>
             </button>
           </div>
         </div>
