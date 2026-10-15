@@ -4,9 +4,17 @@ import { Mail, Calendar, Mic, Sparkles, ArrowRight, Award, Send } from 'lucide-r
 import { Link } from 'react-router-dom';
 import speakerPortrait from '../assets/speaker_contact.png';
 
-const SpeakerSection = () => {
+interface SpeakerSectionProps {
+  className?: string;
+  isStandalone?: boolean;
+}
+
+const SpeakerSection: React.FC<SpeakerSectionProps> = ({ className = '', isStandalone = false }) => {
   return (
-    <section id="speaker-contact" className="py-16 sm:py-28 relative border-t border-white/5 bg-[#070709]">
+    <section 
+      id="speaker-contact" 
+      className={`${isStandalone ? 'py-4 sm:py-8' : 'py-16 sm:py-28 border-t border-white/5'} relative bg-[#070709] ${className}`}
+    >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
         <div className="rounded-[28px] sm:rounded-[36px] p-5 sm:p-10 md:p-14 relative overflow-hidden bg-[#0E0E14] border border-white/10">
           

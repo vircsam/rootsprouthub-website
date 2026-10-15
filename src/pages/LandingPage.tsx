@@ -10,7 +10,6 @@ import { BLOGS, PROJECTS, PARTNERS, VIDEOS, REVIEWS } from '../constants';
 import { Link } from 'react-router-dom';
 import founderPortrait from '../assets/founder_portrait.png';
 import latentLayerLogo from '../assets/latent_layer_logo.png';
-import SpeakerSection from '../components/SpeakerSection';
 
 const MarqueeTicker = () => {
   const items = [
@@ -785,8 +784,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 9. SPEAKER CONTACT SECTION */}
-      <SpeakerSection />
 
       {/* 10. SPONSORSHIP SECTION */}
       <section id="sponsorship" className="py-20 sm:py-28 relative border-t border-white/5">

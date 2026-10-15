@@ -4,20 +4,23 @@ import { BLOGS } from '../constants';
 import { ArrowRight, Cpu, Layers, BookOpen, Sparkles } from 'lucide-react';
 
 const BlogsPage = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'series' | 'from-scratch' | 'deep-dive'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'series' | 'tinyml' | 'from-scratch' | 'deep-dive'>('all');
 
   const seriesBlogs = BLOGS.filter(b => b.isSeries);
-  const fromScratchBlogs = BLOGS.filter(b => b.tags.includes('From Scratch'));
-  const deepDiveBlogs = BLOGS.filter(b => b.tags.includes('Deep Dive'));
+  const tinymlBlogs = BLOGS.filter(b => b.tags.some(t => t.toLowerCase().replace(/\s+/g, '') === 'tinyml'));
+  const fromScratchBlogs = BLOGS.filter(b => b.tags.some(t => t.toLowerCase() === 'from scratch'));
+  const deepDiveBlogs = BLOGS.filter(b => b.tags.some(t => t.toLowerCase() === 'deep dive'));
 
   const displayedBlogs = 
     activeTab === 'series' 
       ? seriesBlogs 
-      : activeTab === 'from-scratch' 
-        ? fromScratchBlogs 
-        : activeTab === 'deep-dive'
-          ? deepDiveBlogs
-          : BLOGS;
+      : activeTab === 'tinyml'
+        ? tinymlBlogs
+        : activeTab === 'from-scratch' 
+          ? fromScratchBlogs 
+          : activeTab === 'deep-dive'
+            ? deepDiveBlogs
+            : BLOGS;
 
   return (
     <div className="pt-36 pb-28 bg-[#070709] text-white min-h-screen bg-grid">
@@ -59,6 +62,18 @@ const BlogsPage = () => {
             >
               <Cpu className="w-3.5 h-3.5" />
               <span>Kernel Series ({seriesBlogs.length})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('tinyml')}
+              className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                activeTab === 'tinyml'
+                  ? 'bg-gradient-to-r from-[#10B981] to-[#34D399] text-black shadow-lg scale-105'
+                  : 'glass text-[#34D399] border-[#10B981]/30 hover:border-[#10B981]'
+              }`}
+            >
+              <Cpu className="w-3.5 h-3.5 text-[#34D399]" />
+              <span>TinyML ({tinymlBlogs.length})</span>
             </button>
 
             <button

@@ -78,6 +78,7 @@ const Footer = () => {
               <li><Link to="/events" className="hover:text-[#FFC300] transition-colors inline-flex items-center gap-1">Events & Talks <ArrowUpRight className="w-3 h-3 opacity-40" /></Link></li>
               <li><Link to="/partners" className="hover:text-[#FFC300] transition-colors inline-flex items-center gap-1">Partnerships <ArrowUpRight className="w-3 h-3 opacity-40" /></Link></li>
               <li><Link to="/community" className="hover:text-[#FFC300] transition-colors inline-flex items-center gap-1">Community Hub <ArrowUpRight className="w-3 h-3 opacity-40" /></Link></li>
+              <li><Link to="/speaker" className="hover:text-[#FFC300] transition-colors inline-flex items-center gap-1">Keynote Speaker <ArrowUpRight className="w-3 h-3 opacity-40" /></Link></li>
               <li><Link to="/sponsorship" className="hover:text-[#FFC300] transition-colors inline-flex items-center gap-1">Sponsorship <ArrowUpRight className="w-3 h-3 opacity-40" /></Link></li>
             </ul>
           </div>

@@ -21,22 +21,13 @@ const Navbar = () => {
     { name: 'Projects', href: '/projects' },
     { name: 'Books', href: '/books' },
     { name: 'Events', href: '/events' },
-    { name: 'Speaker', href: '/#speaker-contact' },
+    { name: 'Speaker', href: '/speaker' },
     { name: 'Partners', href: '/partners' },
     { name: 'Community', href: '/community' },
     { name: 'Sponsorship', href: '/sponsorship' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent, href: string) => {
-    if (href.includes('#speaker-contact')) {
-      if (location.pathname === '/') {
-        e.preventDefault();
-        const el = document.getElementById('speaker-contact');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
+  const handleNavClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -63,7 +54,7 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 to={link.href} 
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={handleNavClick}
                 className={`relative px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   isActive 
                     ? 'text-black font-bold bg-[#FFC300] shadow-[0_0_15px_rgba(255,195,0,0.4)]' 
@@ -112,7 +103,7 @@ const Navbar = () => {
                 <Link 
                   key={link.name} 
                   to={link.href} 
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center justify-between ${
                     location.pathname === link.href ? 'bg-[#FFC300] text-black font-bold' : 'text-white/80 hover:bg-white/5'
                   }`}

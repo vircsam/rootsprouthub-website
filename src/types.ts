@@ -10,6 +10,9 @@ export interface Blog {
   image: string;
   excerpt: string;
   link: string;
+  isSeries?: boolean;
+  seriesTitle?: string;
+  part?: string;
 }
 
 export interface Project {

@@ -7,6 +7,11 @@ import blog5 from './assets/blogs/5.png';
 import blog6 from './assets/blogs/6.png';
 import blog7 from './assets/blogs/7.png';
 import blog8 from './assets/blogs/8.png';
+import mitLecture4 from './assets/blogs/mit_lecture_4.png';
+import mitLecture3 from './assets/blogs/mit_lecture_3.png';
+import mitLecture2 from './assets/blogs/mit_lecture_2.png';
+import mitLecture1 from './assets/blogs/mit_lecture_1.png';
+import transformerFromScratch from './assets/blogs/transformer_from_scratch.png';
 import nginxBookCover from './assets/books/book.jpg';
 import project1 from './assets/projects/1.png';
 import project2 from './assets/projects/2.png';
@@ -51,6 +56,61 @@ import muthuselviAvatar from './assets/reviews/muthuselvi.jpg';
 import arenAvatar from './assets/reviews/aren.jpg';
 
 export const BLOGS: Blog[] = [
+  {
+    id: 'mit-lecture-4',
+    title: 'Lecture 4 of MIT 6.5940 (Pruning Algorithms to Sparse Hardware)',
+    author: 'Meerthika SR',
+    tags: ['TinyML', 'Hardware', 'Pruning'],
+    readTime: '15 min',
+    date: 'Oct 3, 2026',
+    image: mitLecture4,
+    excerpt: 'Neural-network pruning is often described very simply: Remove unnecessary weights → make the model smaller → make inference faster. The first part is true. The second part is only sometimes true.',
+    link: 'https://meerthika.medium.com/lecture-4-of-mit-6-5940-pruning-algorithms-to-sparse-hardware-626d2c26730f?source=user_profile_page---------0-------------a9272499aef8------------------------'
+  },
+  {
+    id: 'mit-lecture-3',
+    title: 'Lecture 3 of MIT 6.5940 (Neural Network Pruning)',
+    author: 'Meerthika SR',
+    tags: ['TinyML', 'Neural Networks', 'Pruning'],
+    readTime: '18 min',
+    date: 'Oct 2, 2026',
+    image: mitLecture3,
+    excerpt: 'Modern neural networks often contain millions or billions of parameters. Although these parameters help models learn complex patterns, not all of them contribute equally to the final prediction.',
+    link: 'https://meerthika.medium.com/lecture-3-of-mit-6-5940-neural-network-pruning-99143693d89f?source=user_profile_page---------1-------------a9272499aef8------------------------'
+  },
+  {
+    id: 'mit-lecture-2',
+    title: 'Lecture 2 of MIT 6.5940 (Demystifying Neural Network Efficiency)',
+    author: 'Meerthika SR',
+    tags: ['TinyML', 'Efficiency', 'Deep Learning'],
+    readTime: '9 min',
+    date: 'Sep 16, 2026',
+    image: mitLecture2,
+    excerpt: 'Understanding the fundamental trade-offs between parameters, FLOPs, receptive fields, activation memory, and the hardware memory energy gap.',
+    link: 'https://meerthika.medium.com/lecture-2-mit-6-5940-demystifying-neural-network-efficiency-9dbe6b38f851?source=user_profile_page---------2-------------a9272499aef8------------------------'
+  },
+  {
+    id: 'mit-lecture-1',
+    title: 'Lecture 1 of MIT 6.5940 (TinyML and Efficient AI Computing)',
+    author: 'Meerthika SR',
+    tags: ['TinyML', 'Edge AI', 'Computing'],
+    readTime: '5 min',
+    date: 'Sep 14, 2026',
+    image: mitLecture1,
+    excerpt: 'Deep learning has driven breakthroughs across computer vision, natural language processing, and multimodal applications. However, these achievements come with an unsustainable computational burden.',
+    link: 'https://meerthika.medium.com/lecture-1-of-mit-6-5940-tinyml-and-efficient-ai-computing-f33a3a4a5077?source=user_profile_page---------3-------------a9272499aef8------------------------'
+  },
+  {
+    id: 'transformer-from-scratch',
+    title: 'Building the “Attention Is All You Need” Transformer From Scratch — Here’s Every Piece of Math Behind It',
+    author: 'Meerthika SR',
+    tags: ['From Scratch', 'Deep Dive', 'Transformers'],
+    readTime: '12 min',
+    date: 'Aug 16, 2026',
+    image: transformerFromScratch,
+    excerpt: 'A from-first-principles walkthrough of a PyTorch implementation of the original Transformer, trained on a toy Japanese ↔ English dataset.',
+    link: 'https://meerthika.medium.com/building-the-attention-is-all-you-need-transformer-from-scratch-heres-every-piece-of-math-c7024f78b778?sharedUserId=meerthika'
+  },
   {
     id: 'k1.2',
     title: '🐧 Kernel Series Part 1.2: Hard Links, Symbolic Links & How Linux Stores Filesystems',

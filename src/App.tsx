@@ -17,6 +17,7 @@ import EventsPage from './pages/EventsPage';
 import PartnersPage from './pages/PartnersPage';
 import CommunityPage from './pages/CommunityPage';
 import VideosPage from './pages/VideosPage';
+import SpeakerPage from './pages/SpeakerPage';
 import SponsorshipPage from './pages/SponsorshipPage';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
@@ -52,7 +53,9 @@ const AppShell = () => {
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/videos" element={<VideosPage />} />
+          <Route path="/speaker" element={<SpeakerPage />} />
           <Route path="/sponsorship" element={<SponsorshipPage />} />
+          <Route path="/speaker-contact" element={<Navigate to="/speaker" replace />} />
           
           {/* Protected Routes
           <Route element={<ProtectedRoute />}>
